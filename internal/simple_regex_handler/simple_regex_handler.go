@@ -5,7 +5,6 @@ import (
 	"gopkg.in/telegram-bot-api.v4"
 	"math/rand"
 	"regexp"
-	"time"
 )
 
 type regexMatch struct {
@@ -43,7 +42,7 @@ var (
 		},
 		&regexMatch{
 			probability: 1.0,
-			regex:       wordBoundryRegexp("(תומר פישמן|ניב מג'ר)"),
+			regex:       wordBoundryRegexp("(תומר פישמן|ניב מג'ר|ניב מג׳ר)"),
 			responses:   []string{"מטונף"},
 		},
 	}
@@ -63,7 +62,7 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 }
 
 func init() {
-	rand.Seed(time.Now().Unix())
+	// Nothing to do
 }
 
 func wordBoundryRegexp(words string) *regexp.Regexp {
