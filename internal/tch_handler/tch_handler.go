@@ -18,7 +18,6 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 				return strings.Replace(hToP, "ח", "ף", len(str))
 			})
 			msg := tgbotapi.NewMessage(message.Chat.ID, tchToPff)
-			msg.ReplyToMessageID = message.MessageID
 			bot.Send(msg)
 		}
 	}

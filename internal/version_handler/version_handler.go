@@ -10,7 +10,6 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 		r := regexp.MustCompile("/version")
 		if r.MatchString(message.Text) {
 			msg := tgbotapi.NewMessage(message.Chat.ID, "0.1.0")
-			msg.ReplyToMessageID = message.MessageID
 			bot.Send(msg)
 		}
 

@@ -54,7 +54,6 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 			if match.regex.MatchString(message.Text) && rand.Float32() <= match.probability {
 				response := match.responses[rand.Intn(len(match.responses))]
 				msg := tgbotapi.NewMessage(message.Chat.ID, response)
-				msg.ReplyToMessageID = message.MessageID
 				bot.Send(msg)
 			}
 		}

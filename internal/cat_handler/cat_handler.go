@@ -44,13 +44,11 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 		gifFilePath, err := getCachedGif()
 		if err != nil {
 			msg := tgbotapi.NewMessage(message.Chat.ID, "Cannot find a gif, tell Amit to pff")
-			msg.ReplyToMessageID = message.MessageID
 			bot.Send(msg)
 			return
 		}
 		defer os.Remove(gifFilePath) // clean up
 		msg := tgbotapi.NewDocumentUpload(message.Chat.ID, gifFilePath)
-		msg.ReplyToMessageID = message.MessageID
 		msg.Caption = captions[rand.Intn(len(captions))]
 		bot.Send(msg)
 	}
