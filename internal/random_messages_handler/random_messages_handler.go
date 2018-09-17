@@ -8,7 +8,7 @@ import (
 )
 
 var (
-	replyProbability = 0.1
+	replyProbability = 0.17
 	replies          = []string{
 		"מה הדיבור @%s?",
 		"מה נז׳מע @%s",
