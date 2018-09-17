@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	regex = regexp.MustCompile("טח*")
+	regex = regexp.MustCompile("ט+ח+")
 )
 
 func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
