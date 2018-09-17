@@ -30,7 +30,6 @@ func New() *BotConfig {
 }
 
 func Start(botConfig *BotConfig) {
-	log.Println("Starting bot")
 	botAddr := "0.0.0.0:8686"
 	log.Printf("Starting bot at %s", botAddr)
 	bot, err := tgbotapi.NewBotAPI(botConfig.TelegramBotToken)
