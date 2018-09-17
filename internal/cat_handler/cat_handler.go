@@ -22,6 +22,18 @@ var (
 	gifCacheSize       = 50
 	gifFilesDir        = "/tmp/cat_gifs"
 	catRegex           = regexp.MustCompile("(?:\\A|\\s)(חתולה|ירון)(?:\\s|\\z)")
+	captions           = []string{
+		"קח חתולה",
+		"הנה חתולה זה",
+		"טחח",
+		"מיאו",
+		"מה נז׳מיאו",
+		"הופה",
+		"פררררר",
+		"איזה חתול ז׳וז׳ו",
+		"לא פסדר",
+		"הכל רמייה",
+	}
 )
 
 func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
@@ -39,6 +51,7 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 		defer os.Remove(gifFilePath) // clean up
 		msg := tgbotapi.NewDocumentUpload(message.Chat.ID, gifFilePath)
 		msg.ReplyToMessageID = message.MessageID
+		msg.Caption = captions[rand.Intn(len(captions))]
 		bot.Send(msg)
 	}
 }

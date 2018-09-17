@@ -3,6 +3,7 @@ package telegram_bot
 import (
 	"github.com/amitizle/go-boker-tov-bot/internal/cat_handler"
 	"github.com/amitizle/go-boker-tov-bot/internal/simple_regex_handler"
+	"github.com/amitizle/go-boker-tov-bot/internal/tch_handler"
 	"github.com/amitizle/go-boker-tov-bot/internal/version_handler"
 	"gopkg.in/telegram-bot-api.v4"
 	"log"
@@ -62,6 +63,7 @@ func Start(botConfig *BotConfig) {
 	router.Handle("Version", version_handler.Callback())
 	router.Handle("Simple Regex", simple_regex_handler.Callback())
 	router.Handle("Cat", cat_handler.Callback())
+	router.Handle("Tchh", tch_handler.Callback())
 
 	for update := range updates {
 		if update.Message == nil {
