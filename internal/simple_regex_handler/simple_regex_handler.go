@@ -5,6 +5,7 @@ import (
 	"gopkg.in/telegram-bot-api.v4"
 	"math/rand"
 	"regexp"
+	"time"
 )
 
 type regexMatch struct {
@@ -61,6 +62,7 @@ func Callback() func(*tgbotapi.BotAPI, *tgbotapi.Message) {
 }
 
 func init() {
+	rand.Seed(time.Now().Unix())
 	// Nothing to do
 }
 
