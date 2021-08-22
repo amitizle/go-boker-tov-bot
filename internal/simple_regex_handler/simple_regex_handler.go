@@ -39,7 +39,7 @@ var (
 		&regexMatch{
 			probability: 0.5,
 			regex:       wordBoundryRegexp("(יואב|יוחאפי|יוחאפ)"),
-			responses:   []string{"דן אריאלי", "הרוקו אחי", "נביא קצת טחינה עם כרובית?"},
+      responses:   []string{"איפה המברשת שיניים שלי?", "הרוקו אחי", "נביא קצת טחינה עם כרובית?"},
 		},
 		&regexMatch{
 			probability: 1.0,
