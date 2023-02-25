@@ -9,6 +9,6 @@ require (
 	github.com/spf13/viper v1.2.0
 	github.com/stretchr/testify v1.7.0 // indirect
 	github.com/technoweenie/multipartstreamer v1.0.1 // indirect
-	golang.org/x/sys v0.0.0-20180909124046-d0be0721c37e // indirect
+	golang.org/x/sys v0.1.0 // indirect
 	gopkg.in/telegram-bot-api.v4 v4.6.2
 )
